@@ -1,0 +1,4 @@
+SourceSystem,SourceSystemReferenceValue,FirstName,LastName,DateOfBirth,MobileCountryCode,MobileNumber,EmailAddress,JobTitle,PersonDEO_Gender_c,AddressLine1,AddressLine2,City,State,Country,PersonDEO_IDNumber_c,PersonDEO_IDIssueDate_c,PersonDEO_IDValidityDate_c,PersonDEO_CreatedBySourceSystem_c,PersonDEO_EmailAddress2_c,PersonDEO_EmailAddress3_c,PersonDEO_MobileNumber2_c,PersonDEO_MobileNumber3_c
+customer_360,ffff1620-cfb9-4e73-b724-05ae5fa0fda1,AN,MAI XUÂN,1900/01/01,,0984337799,,,,,,,,VN,,,,,,,,
+customer_360,fffead62-9601-426e-bce5-85acab09994e,THẢO,ĐỖ THỊ,1990/01/01,,,,,,,,,,VN,,,,,,,,
+customer_360,fffde7a1-12d2-400e-b1fa-f10dbf0b63ea,DƯƠNG,ĐỖ VĂN,1990/01/01,,,,,,,,,,VN,,,,,,,,
