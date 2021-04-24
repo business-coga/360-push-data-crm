@@ -3,11 +3,11 @@ const {
 } = require('pg')
 
 const conn = new Pool({
-    user: 'dbuser',
-    host: 'database.server.com',
-    database: 'mydb',
-    password: 'secretpassword',
-    port: 3211,
+    user: 'postgres',
+    host: '10.254.61.68',
+    database: 'cus360',
+    password: '123456789',
+    port: 5432,
 })
 
 conn.connect((err)=>{
@@ -15,5 +15,9 @@ conn.connect((err)=>{
         throw err
     console.log('DB connected!')
 })
+
+// conn.query(require('./config').query.getPageProfile(10000), (err,data)=>{
+//     console.log({err,data : data.rows})
+// })
 
 module.exports = conn
