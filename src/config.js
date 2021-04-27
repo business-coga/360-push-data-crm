@@ -19,7 +19,8 @@ module.exports = {
             END AS LastName,
             CASE 
                 WHEN CP.date_of_brith IS NULL THEN ''
-                ELSE  TO_CHAR(CP.date_of_brith :: DATE, 'yyyy-mm-dd')::VARCHAR(1000)
+                WHEN date_part('year', CP.date_of_brith) > date_part('year', NOW()) THEN ''
+                ELSE TO_CHAR(CP.date_of_brith :: DATE, 'yyyy-mm-dd')::VARCHAR(1000)
             END AS DateOfBirth,
             '' MobileCountryCode,
             CASE
@@ -175,5 +176,17 @@ module.exports = {
             return `SELECT COUNT(*)/${pageSize} + 1 AS "PAGE_COUNT" FROM consolidate.cust_profile`
         }
     },
-    pageSize : 10000
+    pageSize : 10000,
+    header : {
+        old : ['sourcesystem','sourcesystemreferencevalue','firstname','lastname',
+        'dateofbirth','mobilecountrycode','mobilenumber','emailaddress','jobtitle','persondeo_gender_c',
+        'addressline1','addressline2','city','State','country','persondeo_idnumber_c','persondeo_idissuedate_c',
+        'persondeo_idvaliditydate_c','persondeo_createdbysourcesystem_c','persondeo_emailaddress2_c',
+        'persondeo_emailaddress3_c','persondeo_mobilenumber2_c','persondeo_mobilenumber3_c'],
+        new : ['SourceSystem','SourceSystemReferenceValue','FirstName','LastName',
+        'DateOfBirth','MobileCountryCode','MobileNumber','EmailAddress','JobTitle','PersonDEO_Gender_c',
+        'AddressLine1','AddressLine2','City','State','Country','PersonDEO_IDNumber_c','PersonDEO_IDIssueDate_c',
+        'PersonDEO_IDValidityDate_c','PersonDEO_CreatedBySourceSystem_c','PersonDEO_EmailAddress2_c',
+        'PersonDEO_EmailAddress3_c','PersonDEO_MobileNumber2_c','PersonDEO_MobileNumber3_c']
+    }
 }
